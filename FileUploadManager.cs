@@ -325,6 +325,14 @@ namespace eForm.Class
             {
                 FileExtension.Add(oItem.Name);
             }
+            if (oList.Count == 0)
+            { 
+                
+                
+            }
+
+
+
             String FileExt = GetFileExtension(filePath);
 
             if (FileExt != string.Empty)

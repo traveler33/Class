@@ -36,7 +36,7 @@ namespace eForm
         public static string SessionFormDesignControlList = "SessionFormDesignControlList";
         public const string BuildInChangeButtonControl = "ChangeButton";
         public const string BuildInChangeLoginNameButtonControl = "ChangeUserNameButton";
-        public static string ctrFormDesignImageControl = "Controls/ucImageControl.ascx";
+        public static string ctrFormDesignImageControl = "Control/ucImageControl.ascx";
         private Boolean IsNotDefaultSeasonID = false;
         public const string MaxLenghtOptionKey = "MaxLenghtOptionKey";
         public const string ImageList = "UploadImageList";
@@ -1001,7 +1001,7 @@ namespace eForm
                             if (oItem.DataListTypeID != null )
                             {
 
-                                List<DesignFormDataList> oDDLList = DesignFormDataList.GetDataListByType(Convert.ToInt16(oItem.DataListTypeID));
+                                List<DesignFormDataList> oDDLList = DesignFormDataList.GetDataListByType(oItem.DataListType);
 
                                 oDDL.DataSource = oDDLList;
                                 oDDL.DataTextField = "DisplayField";
@@ -1717,10 +1717,10 @@ namespace eForm
                         }
                         else
                         {
-                            if (oItem.DataListTypeID != 0)
+                            if (oItem.DataListType != null && oItem.DataListType != string.Empty)
                             {
 
-                                List<DesignFormDataList> oDDLList = DesignFormDataList.GetDataListByType(Convert.ToInt16(oItem.DataListTypeID));
+                                List<DesignFormDataList> oDDLList = DesignFormDataList.GetDataListByType(oItem.DataListType);
 
                                 oDDL.DataSource = oDDLList;
                                 oDDL.DataTextField = "DisplayField";
